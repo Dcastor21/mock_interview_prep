@@ -1,6 +1,6 @@
+import React from "react";
 import {
   FormControl,
-  FormDescription,
   FormItem,
   FormLabel,
   FormMessage,
@@ -13,7 +13,7 @@ interface FormFieldProps<T extends FieldValues> {
   name: Path<T>;
   label: string;
   placeholder?: string;
-  type?: "text" | "password" | "email" | "file";
+  type?: "text" | "email" | "password" | "file";
 }
 
 const FormField = ({
@@ -32,12 +32,11 @@ const FormField = ({
         <FormControl>
           <Input
             className="input"
-            type={type}
             placeholder={placeholder}
+            type={type}
             {...field}
           />
         </FormControl>
-
         <FormMessage />
       </FormItem>
     )}
