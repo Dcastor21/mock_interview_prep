@@ -83,7 +83,7 @@
 //   password: string;
 // }
 
-// type FormType = "sign-in" | "sign-up";
+type FormType = "sign-in" | "sign-up";
 
 // interface InterviewFormProps {
 //   interviewId: string;

@@ -5,26 +5,47 @@ import Image from "next/image";
 import React from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { Form, useForm } from "react-hook-form";
+import Link from "next/link";
+import { toast } from "sonner";
 import FormField from "./FormField";
+import { useRouter } from "next/navigation";
 
-const formSchema = z.object({
-  username: z.string().min(2).max(50),
-});
+const authFormSchema = (type: FormType) => {
+  return z.object({
+    name: type === "sign-up" ? z.string().min(3) : z.string().optional(),
+    email: z.string().email(),
+    password: z.string().min(6),
+  });
+};
 
-const AuthForm = () => {
+const AuthForm = ({ type }: { type: FormType }) => {
+  const router = useRouter();
+  const formSchema = authFormSchema(type);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      name: "",
+      email: "",
+      password: "",
     },
   });
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    try {
+      if (type === "sign-up") {
+        console.log(values);
+        toast.success("Account created successfully");
+        router.push("/sign-in");
+      } else {
+        toast.success("Sign In successfully");
+        router.push("/sign-in");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(`${error}`);
+    }
   }
-
+  const isSignIn = type === "sign-in";
   return (
     <div className="card-border lg:min-w-[566px]">
       <div className="flex flex-col gap-6 card py-14 px-10">
@@ -39,9 +60,42 @@ const AuthForm = () => {
             onSubmit={form.handleSubmit(onSubmit)}
             className="w-full space-y-6 mt-4 form"
           >
-            <Button type="submit">Submit</Button>
+            {!isSignIn && (
+              <FormField
+                control={form.control}
+                name="name"
+                label="Name"
+                placeholder="Your Name"
+              />
+            )}
+            <FormField
+              control={form.control}
+              name="email"
+              label="Email"
+              placeholder="Your Email"
+              type="email"
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              label="Password"
+              placeholder="Your Password"
+              type="password"
+            />
+            <Button className="btn" type="submit">
+              {isSignIn ? "Sign In" : "Create Account"}
+            </Button>
           </form>
         </Form>
+        <p className="text-center">
+          {isSignIn ? "Don't have an account?" : "Already have an account?"}
+          <Link
+            href={!isSignIn ? "/sign-in" : "/sign-up"}
+            className="font-bold text-user-primary ml-1"
+          >
+            {isSignIn ? "Sign in" : "Sign Up"}
+          </Link>
+        </p>
       </div>
     </div>
   );
