@@ -94,6 +94,6 @@ type FormType = "sign-in" | "sign-up";
 //   amount: number;
 // }
 
-// interface TechIconProps {
-//   techStack: string[];
-// }
+interface TechIconProps {
+  techStack: string[];
+}
