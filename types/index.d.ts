@@ -47,14 +47,14 @@ interface InterviewCardProps {
   createdAt?: string;
 }
 
-// interface AgentProps {
-//   userName: string;
-//   userId?: string;
-//   interviewId?: string;
-//   feedbackId?: string;
-//   type: "generate" | "interview";
-//   questions?: string[];
-// }
+interface AgentProps {
+  userName: string;
+  userId?: string;
+  interviewId?: string;
+  feedbackId?: string;
+  type: "generate" | "interview";
+  questions?: string[];
+}
 
 // interface RouteParams {
 //   params: Promise<Record<string, string>>;
