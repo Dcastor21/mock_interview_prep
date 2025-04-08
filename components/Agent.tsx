@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { vapi } from "@/lib/vapi.sdk";
 import { interviewer } from "@/constants";
-// import { createFeedback } from "@/lib/actions/general.action";
+import { createFeedback } from "@/lib/actions/general.actions";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
@@ -201,7 +201,7 @@ const Agent = ({
                 callStatus !== "CONNECTING" && "hidden"
               )}
             />
-            <span className="text-white">
+            <span className="relative">
               {isCallInactiveOrFinished ? "Call" : ". . . ."}
             </span>
           </button>
