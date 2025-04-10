@@ -25,12 +25,12 @@ interface Interview {
   finalized: boolean;
 }
 
-// interface CreateFeedbackParams {
-//   interviewId: string;
-//   userId: string;
-//   transcript: { role: string; content: string }[];
-//   feedbackId?: string;
-// }
+interface CreateFeedbackParams {
+  interviewId: string;
+  userId: string;
+  transcript: { role: string; content: string }[];
+  feedbackId?: string;
+}
 
 // interface User {
 //   name: string;
@@ -85,14 +85,14 @@ interface SignUpParams {
 
 type FormType = "sign-in" | "sign-up";
 
-// interface InterviewFormProps {
-//   interviewId: string;
-//   role: string;
-//   level: string;
-//   type: string;
-//   techstack: string[];
-//   amount: number;
-// }
+interface InterviewFormProps {
+  interviewId: string;
+  role: string;
+  level: string;
+  type: string;
+  techstack: string[];
+  amount: number;
+}
 
 interface TechIconProps {
   techStack: string[];
