@@ -145,9 +145,6 @@ const Agent = ({
   };
   const latestMessage = messages[messages.length - 1]?.content;
 
-  const isCallInactiveOrFinished =
-    callStatus === CallStatus.INACTIVE || callStatus === CallStatus.FINISHED;
-
   return (
     <>
       <div className="call-view">
@@ -202,11 +199,13 @@ const Agent = ({
               )}
             />
             <span className="relative">
-              {isCallInactiveOrFinished ? "Call" : ". . . ."}
+              {callStatus === "INACTIVE" || callStatus === "FINISHED"
+                ? "Call"
+                : ". . ."}
             </span>
           </button>
         ) : (
-          <button className="btn-disconnect" onClick={handleDisconnect}>
+          <button className="btn-disconnect" onClick={() => handleDisconnect()}>
             End
           </button>
         )}

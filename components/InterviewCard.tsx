@@ -69,7 +69,7 @@ const InterviewCard = async ({
             <Link
               href={feedback ? `interview/${id}/feedback` : `interview/${id}`}
             >
-              {feedback ? "View Feedback" : "View Interview"}
+              {feedback ? "View Feedback" : "Take the Interview"}
             </Link>
           </Button>
         </div>
