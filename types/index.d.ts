@@ -1,17 +1,17 @@
-// interface Feedback {
-//   id: string;
-//   interviewId: string;
-//   totalScore: number;
-//   categoryScores: Array<{
-//     name: string;
-//     score: number;
-//     comment: string;
-//   }>;
-//   strengths: string[];
-//   areasForImprovement: string[];
-//   finalAssessment: string;
-//   createdAt: string;
-// }
+interface Feedback {
+  id: string;
+  interviewId: string;
+  totalScore: number;
+  categoryScores: Array<{
+    name: string;
+    score: number;
+    comment: string;
+  }>;
+  strengths: string[];
+  areasForImprovement: string[];
+  finalAssessment: string;
+  createdAt: string;
+}
 
 interface Interview {
   id: string;
@@ -56,20 +56,20 @@ interface AgentProps {
   questions?: string[];
 }
 
-// interface RouteParams {
-//   params: Promise<Record<string, string>>;
-//   searchParams: Promise<Record<string, string>>;
-// }
+interface RouteParams {
+  params: Promise<Record<string, string>>;
+  searchParams: Promise<Record<string, string>>;
+}
 
-// interface GetFeedbackByInterviewIdParams {
-//   interviewId: string;
-//   userId: string;
-// }
+interface GetFeedbackByInterviewIdParams {
+  interviewId: string;
+  userId: string;
+}
 
-// interface GetLatestInterviewsParams {
-//   userId: string;
-//   limit?: number;
-// }
+interface GetLatestInterviewsParams {
+  userId: string;
+  limit?: number;
+}
 
 interface SignInParams {
   email: string;
