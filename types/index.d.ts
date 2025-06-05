@@ -32,11 +32,11 @@ interface CreateFeedbackParams {
   feedbackId?: string;
 }
 
-// interface User {
-//   name: string;
-//   email: string;
-//   id: string;
-// }
+interface User {
+  name: string;
+  email: string;
+  id: string;
+}
 
 interface InterviewCardProps {
   id?: string;
