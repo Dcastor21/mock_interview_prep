@@ -1,5 +1,5 @@
 import Agent from "@/components/Agent";
-import DispalayTechIcons from "@/components/DispalayTechIcons";
+import DisplayTechIcons from "@/components/DisplayTechIcons";
 import { getCurrentUser } from "@/lib/actions/auth.actions";
 import { getInterviewById } from "@/lib/actions/general.actions";
 import { getRandomInterviewCover } from "@/lib/utils";
@@ -27,14 +27,14 @@ const Page = async ({ params }: RouteParams) => {
             />
             <h3 className="text-lg capitalize">{interview.role} Interview</h3>
           </div>
-          <DispalayTechIcons techStack={interview.techstack} />
+          <DisplayTechIcons techStack={interview.techstack} />
         </div>
         <p className="bg-dark-200 px-4 py-2 rounded-lg h-fit capitalize">
           {interview.type}
         </p>
       </div>
       <Agent
-        userName={user?.nane || ""}
+        userName={user?.name || ""}
         userId={user?.id}
         type="interview"
         interviewId={id}

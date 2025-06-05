@@ -2,7 +2,7 @@ import React from "react";
 import { cn, getTechLogos } from "@/lib/utils";
 import Image from "next/image";
 
-const DispalayTechIcons = async ({ techStack }: TechIconProps) => {
+const DisplayTechIcons = async ({ techStack }: TechIconProps) => {
   const techIcons = await getTechLogos(techStack);
   return (
     <div className="flex flex-row">
@@ -29,4 +29,4 @@ const DispalayTechIcons = async ({ techStack }: TechIconProps) => {
   );
 };
 
-export default DispalayTechIcons;
+export default DisplayTechIcons;
