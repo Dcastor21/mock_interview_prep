@@ -1,11 +1,10 @@
 import InterviewCard from "@/components/InterviewCard";
 import { Button } from "@/components/ui/button";
-import { dummyInterviews } from "@/constants";
+// import { dummyInterviews } from "@/constants";
 import {
   getInterviewsByUserId,
   getLatestInterviews,
 } from "@/lib/actions/general.actions";
-import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -18,8 +17,8 @@ const Home = async () => {
     await getLatestInterviews({ userId: user?.id || "" }),
   ]);
 
-  const hasPastInterviews = userInterviews?.length > 0;
-  const hasUpcomingInterviews = latestInterviews?.length > 0;
+  const hasPastInterviews = userInterviews && userInterviews.length > 0;
+  const hasUpcomingInterviews = latestInterviews && latestInterviews.length > 0;
 
   return (
     <>
@@ -59,7 +58,7 @@ const Home = async () => {
         <h2>Take an Interview</h2>
         <div className="interviews-section">
           {hasUpcomingInterviews ? (
-            userInterviews?.map((interview) => (
+            latestInterviews?.map((interview) => (
               <InterviewCard {...interview} key={interview.id} />
             ))
           ) : (

@@ -13,9 +13,13 @@ const initFirebaseAdmin = () => {
         privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
       }),
     });
+
+    // Only set settings during initial initialization
+    const firestoreInstance = getFirestore();
+    firestoreInstance.settings({ ignoreUndefinedProperties: true });
   }
+
   const db = getFirestore();
-  db.settings({ ignoreUndefinedProperties: true });
 
   return {
     auth: getAuth(),
