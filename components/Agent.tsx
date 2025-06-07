@@ -143,7 +143,6 @@ const Agent = ({
     setCallStatus(CallStatus.FINISHED);
     vapi.stop();
   };
-  const latestMessage = messages[messages.length - 1]?.content;
 
   return (
     <>
@@ -178,19 +177,19 @@ const Agent = ({
         <div className="transcript-border">
           <div className="transcript">
             <p
-              key={latestMessage}
+              key={lastMessage}
               className={cn(
                 "transiton-opacity duration-500 opacity-0",
                 "animate-fadeIn opacity-100"
               )}
             >
-              {latestMessage}
+              {lastMessage}
             </p>
           </div>
         </div>
       )}
       <div className=" w-full flex justify-center">
-        {CallStatus !== "ACTIVE" ? (
+        {callStatus !== "ACTIVE" ? (
           <button className="relative btn-call" onClick={handleCall}>
             <span
               className={cn(
