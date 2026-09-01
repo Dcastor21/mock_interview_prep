@@ -56,7 +56,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
         });
 
         if (!result?.success) {
-          throw new Error(result?.error);
+          toast.error(result?.message || "Failed to create account.");
           return;
         }
 

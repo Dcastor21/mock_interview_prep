@@ -26,7 +26,7 @@ export async function setSessionCookie(idToken: string) {
 }
 
 export async function signUp(params: SignUpParams) {
-  const { uid, name, email } = params;
+  const { uid, name, email, profileURL = "" } = params;
 
   try {
     // check if user exists in db
