@@ -36,7 +36,12 @@ Practicing for interviews out loud is one of the best ways to prepare, but it's 
 
 ## Project Evidence
 
-`[Add 2-3 screenshots here — e.g. the landing/dashboard page, an active voice interview in progress, and a feedback report — plus a link to your live Vercel deployment if you have one. A short screen recording or GIF of a full interview → feedback flow is even better if you have the time.]`
+![Project Login](images/login.png)
+![Project Interview Call](images/call.png)
+![Project Dashboard](images/dashboard.png)
+![Project Feedback Results](images/feedback.png)
+
+
 
 ## Individual Contribution
 
