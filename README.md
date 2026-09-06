@@ -2,7 +2,8 @@
 
 PrepWise is a full-stack web app that lets job seekers practice job interviews with a real-time, voice-based AI interviewer and get instant, structured feedback afterward — no need to schedule a mock interview with another person.
 
-> **Live demo:** `[add your deployed Vercel URL here]`
+> **Live demo:** [demo](https://mock-interview-prep-three.vercel.app/)
+
 > **Screenshots / demo video:** see [Project Evidence](#project-evidence) below
 
 ## Problem
@@ -32,7 +33,6 @@ Practicing for interviews out loud is one of the best ways to prepare, but it's 
 
 - A working end-to-end product: account creation → AI-generated interview → live voice interview with an AI interviewer → automatically scored, structured feedback report.
 - Shipped and merged a fix for a React Server Components CVE flagged by Vercel's automated security scanning, and improved error handling / user-profile field handling in the auth flow after the initial build.
-- `[Add anything else concrete: e.g. number of practice interviews you've run through it yourself, any performance/UX issue you found and fixed, any feature you added beyond the original build.]`
 
 ## Project Evidence
 
